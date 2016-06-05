@@ -72,12 +72,12 @@
 			*/
 
 			if($printData) {	# print the real information and insert them into the database
-				$res = mysqli_query($conn, "INSERT INTO books (ID, Descrizione, Prezzo, Quantita) VALUES ('.$id.','".$description."', ".$price.", ".$quantity.")");
+				$res = mysqli_query($conn, "INSERT INTO books (ID, Descrizione, Prezzo, Quantita) VALUES (".$id.",'".$description."', ".$price.", ".$quantity.")");
 				if (!$res)
 					die("Impossible to add the new record to the database (".mysqli_errno($conn)."):<BR>".mysqli_error($conn));
 				
 				echo "<p>The record<br>",
-					"ID = $id - DESCRIPTION = $description - PRICE = $price - QUANTITY = $quantity",
+					"DESCRIPTION = $description - PRICE = $price - QUANTITY = $quantity",
 					"<br> was been inserted!</p>";
 			}
 			
